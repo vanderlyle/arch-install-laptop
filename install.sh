@@ -76,6 +76,9 @@ arch-chroot /mnt passwd # untested
 #Reboot
 #Post-installation
 
+cp test-script.sh /mnt/home
+arch-chroot /mnt sh /home/test-script
+
 # DONE
 
 umount -R /mnt
