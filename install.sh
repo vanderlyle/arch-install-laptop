@@ -64,13 +64,14 @@ genfstab -U /mnt >> /mnt/etc/fstab || error_exit "ERROR: Could not write fstab f
 #arch-chroot /mnt copy/chroot.sh || error_exit "ERROR: Chroot script failed."
 #rm -rf /mnt/copy
 
-#Change root into new system - TESTING
 cp chroot-script.sh /mnt/home
 arch-chroot /mnt sh /home/chroot-script.sh
+rm /mnt/home/chroot-script.sh
 
 #arch-chroot /mnt passwd # untested
-#Reboot
-#Post-installation
+
+# Reboot
+# Post-installation
 
 # DONE
 
