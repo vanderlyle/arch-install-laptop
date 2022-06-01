@@ -3,7 +3,7 @@
 # TODO
 #   (1) "implement" SELinux - https://wiki.archlinux.org/index.php/SELinux
 
-#trap exit 1 ERR # Abort script if something in chroot or customize scripts throw and error
+trap exit 1 ERR # Abort script if something in chroot or customize scripts throw and error
 
 error_exit()
 {
@@ -11,8 +11,7 @@ error_exit()
 	exit 1
 }
 
-#export -f error_exit # exporting erro finction to chroot function too
-
+export -f error_exit # exporting erro finction to chroot function too
 
 # PRE-INSTALLATION
 
@@ -65,19 +64,13 @@ genfstab -U /mnt >> /mnt/etc/fstab || error_exit "ERROR: Could not write fstab f
 #arch-chroot /mnt copy/chroot.sh || error_exit "ERROR: Chroot script failed."
 #rm -rf /mnt/copy
 
-#Change root into new system
-#Set time zone
-#Localization
-#Network configuration
-#Initframs
-#Root password
-arch-chroot /mnt passwd # untested
-#Boot loader
+#Change root into new system - TESTING
+cp chroot-script.sh /mnt/home
+arch-chroot /mnt sh /home/chroot-script.sh
+
+#arch-chroot /mnt passwd # untested
 #Reboot
 #Post-installation
-
-cp test-script.sh /mnt/home
-arch-chroot /mnt sh /home/test-script
 
 # DONE
 
