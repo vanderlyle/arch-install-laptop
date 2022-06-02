@@ -32,6 +32,5 @@ passwd
 bootctl install --no-variables || error_exit "Error: Could not install 'bootctl'."
 cp /usr/share/systemd/bootctl/arch.conf /boot/loader/entries/arch.conf
 sed -i '0,/options/s/options.*/options root=PARTUUID='"$(blkid -s PARTUUID -o value /dev/sda3)"' rw quiet/' /boot/loader/entries/arch.conf
-echo -e "default\tarch.conf\ntimeout\t0\nconsole-mode\tmax\neditor\tno" > /boot/loader/loader.conf # adjust timeout to make menu visible
-
+echo -e "timeout\tmenu-force\ndefault\tarch.conf\tmax\neditor\tno" > /boot/loader/loader.conf
 pacman -S vi vim git wget curl --needed --noconfirm || error_exit "Error: Could not install additional packages."
