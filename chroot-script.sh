@@ -25,7 +25,11 @@ systemctl enable NetworkManager
 mkinitcpio -P
 
 # Root password
-passwd
+echo $(date +%F | base64) | passwd --stdin || error_exit "Error: Could not set new root password."
+
+# Add new user
+useradd -mUG wheel vanderlyle || error_exit "Error: Could not create new user."
+echo $(date +%F) | passwd --stdin vanderlyle || error_exit "Error: Could not set password for new user."
 
 # Boot loader
 # Failed to write EFI variable WORKAROUND: https://github.com/systemd/systemd/issues/13603#issuecomment-552246188
