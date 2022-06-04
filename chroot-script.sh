@@ -30,6 +30,7 @@ echo "root:$(date +%F | base64)" | chpasswd || error_exit "Error: Could not set 
 # Add new user
 useradd -mG wheel vanderlyle || error_exit "Error: Could not create new user."
 echo "vanderlyle:$(date +%F)" | chpasswd || error_exit "Error: Could not set password for new user."
+echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/1_allow_wheel_sudo_passwd || error_exit "Error: Could not add file to sudoers directory."
 
 # Boot loader
 # Failed to write EFI variable WORKAROUND: https://github.com/systemd/systemd/issues/13603#issuecomment-552246188
