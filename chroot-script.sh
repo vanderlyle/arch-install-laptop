@@ -28,7 +28,7 @@ mkinitcpio -P
 echo "root:$(date +%F | base64)" | chpasswd || error_exit "Error: Could not set new root password."
 
 # Add new user
-useradd -mUG wheel vanderlyle || error_exit "Error: Could not create new user."
+useradd -mG wheel vanderlyle || error_exit "Error: Could not create new user."
 echo "vanderlyle:$(date +%F)" | chpasswd || error_exit "Error: Could not set password for new user."
 
 # Boot loader
