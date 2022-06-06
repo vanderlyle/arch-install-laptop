@@ -43,4 +43,4 @@ echo -e "timeout\tmenu-force\ndefault\tarch.conf\tmax\neditor\tno" > /boot/loade
 # Install packages
 pacman -S vi vim git wget curl --needed --noconfirm || error_exit "Error: Could not install git wget curl packages."
 pacman -S xf86-video-nouveau mesa --needed --noconfirm || error_exit "Error: Could not install xf86-video-nouveau mesa packages."
-xorg i3-gaps i3status i3lock rxvt-unicode xorg-xrdb zsh zsh-completions lightdm lightdm-gtk-greeter --needed --noconfirm || error_exit "Error: Could not install additional packages."
+pacman -S xorg i3-gaps i3status i3lock rxvt-unicode xorg-xrdb zsh zsh-completions lightdm lightdm-gtk-greeter --needed --noconfirm || error_exit "Error: Could not install additional packages."
