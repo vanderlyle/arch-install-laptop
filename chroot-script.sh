@@ -45,6 +45,7 @@ pacman -S xf86-video-nouveau mesa --needed --noconfirm || error_exit "Error: Cou
 pacman -S xorg i3-gaps i3status i3lock rxvt-unicode xorg-xrdb zsh zsh-completions lightdm lightdm-gtk-greeter --needed --noconfirm || error_exit "Error: Could not install additional packages."
 # Enabling lightdm systemd service
 sudo systemctl enable lightdm
-# untested - change x keyboard language
-echo setxkbmap hu > /home/vanderlyle/.profile
-chown -R vanderlyle:vanderlyle /home/vanderlyle/.profile
+
+# Xorg/Keyboard configuration
+# Running localectl will save the configuration in /etc/X11/xorg.conf.d/00-keyboard.conf
+localectl --no-convert set-x11-keymap layout hu
