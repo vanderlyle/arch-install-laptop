@@ -73,7 +73,8 @@ rm /mnt/home/chroot-script.sh
 # Reboot
 # Post-installation
 
-# Set xorg keyboard to hu
+# Set xorg keyboard to hu (needed for xorg & lightdm)
+# Normally created by running localectl (cannot run in chroot)
 cp /copy/00-keyboard.conf /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
 
 # DONE
