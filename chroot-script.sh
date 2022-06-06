@@ -39,10 +39,12 @@ cp /usr/share/systemd/bootctl/arch.conf /boot/loader/entries/arch.conf
 sed -i '0,/options/s/options.*/options root=PARTUUID='"$(blkid -s PARTUUID -o value /dev/sda3)"' rw quiet/' /boot/loader/entries/arch.conf
 echo -e "timeout\tmenu-force\ndefault\tarch.conf\tmax\neditor\tno" > /boot/loader/loader.conf
 
-# UNTESTED - Customization
-# Install packages
+# Customization
 pacman -S vi vim git wget curl --needed --noconfirm || error_exit "Error: Could not install git wget curl packages."
 pacman -S xf86-video-nouveau mesa --needed --noconfirm || error_exit "Error: Could not install xf86-video-nouveau mesa packages."
 pacman -S xorg i3-gaps i3status i3lock rxvt-unicode xorg-xrdb zsh zsh-completions lightdm lightdm-gtk-greeter --needed --noconfirm || error_exit "Error: Could not install additional packages."
 # Enabling lightdm systemd service
 sudo systemctl enable lightdm
+# untested - change x keyboard language
+echo setxkbmap hu > /home/vanderlyle/.profile
+chown -R vanderlyle:vanderlyle /home/vanderlyle/.profile
