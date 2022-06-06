@@ -48,7 +48,7 @@ sudo systemctl enable lightdm
 
 # Xorg/Keyboard configuration
 # Running localectl will save the configuration in /etc/X11/xorg.conf.d/00-keyboard.conf
-localectl --no-convert set-x11-keymap layout hu
+#localectl --no-convert set-x11-keymap layout hu
 
 #Keep command as reference for copying dotfiles
 #chown -R vanderlyle:vanderlyle /home/vanderlyle/.profile
