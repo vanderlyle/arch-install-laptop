@@ -73,8 +73,8 @@ rm /mnt/home/chroot-script.sh
 # Reboot
 # Post-installation
 
-# Trying to run localectl to generate persistent keyboard config for xorg
-systemd-nspawn -bD /mnt localectl --no-convert set-x11-keymap layout hu
+# Set xorg keyboard to hu
+cp /copy/00-keyboard.conf /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
 
 # DONE
 
