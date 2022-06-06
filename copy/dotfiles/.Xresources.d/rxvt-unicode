@@ -1,0 +1,32 @@
+! Appearance
+URxvt.termName: rxvt-unicode
+URxvt.scrollBar: false
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
+! transparency check with compton
+!URxvt*depth: 32 ! enable transparency
+!URxvt*background: [95]#171717 ! background transparency level and color
+
+
+URxvt.font: xft:Fira Code:pixelsize=12, xft:MesloLGS NF:pixelsize=12 ! secondary font for icons
+URxvt.saveLines: 1000000
+
+URxvt.letterSpace: -1 ! anything below 1 prevents display of icon glyphs
+
+! untested block
+! Changing default copy-paste shortcuts for urxvt
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+! disabling default keybindings
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+! turn off yellow bow formatting that would appear on ctrl plus shift
+URxvt.iso14755: false
+
+! Color theme
+#include "./themes/nord"
