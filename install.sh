@@ -73,6 +73,9 @@ rm /mnt/home/chroot-script.sh
 # Reboot
 # Post-installation
 
+# Trying to run localectl to generate persistent keyboard config for xorg
+systemd-nspawn -bD /mnt localectl --no-convert set-x11-keymap layout hu
+
 # DONE
 
 umount -R /mnt
