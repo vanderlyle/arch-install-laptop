@@ -77,6 +77,9 @@ rm /mnt/home/chroot-script.sh
 # Normally created by running localectl (cannot run in chroot)
 cp copy/00-keyboard.conf /mnt/etc/X11/xorg.conf.d
 
+# Touchpad configuration (enable tap-to-click - normal left click doesn't work though)
+cp copy/30-touchpad.conf /mnt/etc/X11/xorg.conf.d
+
 # DONE
 
 umount -R /mnt
