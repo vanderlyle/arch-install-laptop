@@ -9,7 +9,7 @@ B. Check if tearing exists with proprietary **Nvidia driver** (AUR)
 
 # Sound
 
-  * alsa the kernel sound system works out of the box (just needs to be unmuted) - PulseAudio sound server could be installed for additional features
+  * alsa the kernel sound system works out of the box (just needs to be unmuted) - for additional features use PulseAudio sound server
   
     ```bash
     sudo pamcan -Syu alsa-utils
