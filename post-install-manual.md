@@ -41,7 +41,7 @@ B. Check if tearing exists with proprietary **Nvidia driver** (AUR)
     amixer set -q Master 1+
     ```
     > -q  
-    > Quiet mode. Do not show results of changes
+    > Quiet mode. Do not show results of changes.  
     > -R  
     > Use the raw value for evaluating the percentage representation. This is the default mode.  
     > -M  
