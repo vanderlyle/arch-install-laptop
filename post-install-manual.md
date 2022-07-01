@@ -40,11 +40,12 @@ B. Check if tearing exists with proprietary **Nvidia driver** (AUR)
     ```bash
     amixer set -q Master 1+
     ```
+    > -q  
+    > Quiet mode. Do not show results of changes
     > -R  
-    > Use the raw value for evaluating the percentage representation. This is the default mode.
-    > 
+    > Use the raw value for evaluating the percentage representation. This is the default mode.  
     > -M  
-    > Use the mapped volume for evaluating the percentage representation like alsamixer, to be more natural for human ear.
+    > Use the mapped volume for evaluating the percentage representation like alsamixer, to be more natural for human ear.  
     
   * Read current volume (to not allow raising above a cap)  
   
