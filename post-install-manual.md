@@ -37,15 +37,15 @@ B. Check if tearing exists with proprietary **Nvidia driver** (AUR)
 
   * Adjust volume from CLI:
 
+   ```bash
+    amixer set -q Master 1+
+    ```
+
     > -R  
     > Use the raw value for evaluating the percentage representation. This is the default mode.
     > 
     > -M  
     > Use the mapped volume for evaluating the percentage representation like alsamixer, to be more natural for human ear.
-
-    ```bash
-    amixer set -q Master 1+
-    ```
     
   * Read current volume (to not allow raising above a cap)  
   
