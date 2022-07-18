@@ -1,9 +1,11 @@
 ## Fix screen tearing / Vertical Sync
 A. [**Nouveau driver** - use Picom compositor config](https://wiki.archlinux.org/title/Nouveau#Vertical_Sync)  
+   ⚠️Resource heavy settings - slows down/turns off laptop
 
    ```bash
    sudo pacman -Syu picom
    echo -e 'picom -b --unredir-if-possible --backend xr_glx_hybrid --vsync --use-damage --glx-no-stencil' >> ~/.profile
+   # Disable with: killall picom
    ```
 B. Check if tearing exists with proprietary **Nvidia driver** (AUR)
 
